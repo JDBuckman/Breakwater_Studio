@@ -1,3 +1,4 @@
+<img width="1512" height="982" alt="Screenshot 2026-11-14 at 10 26 06 pm" src="https://github.com/user-attachments/assets/ab094375-5b16-4e22-96de-65c861628640" />
 # Breakwater Studio
 
 **A free loop sequencer inspired by Making Waves. It opens your old Making Waves songs.**
