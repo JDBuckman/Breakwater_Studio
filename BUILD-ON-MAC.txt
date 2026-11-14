@@ -1,0 +1,27 @@
+BUILDING THE MAC VERSION OF BREAKWATER STUDIO
+=============================================
+
+One-time setup
+--------------
+1. Install Node.js (the "LTS" version) from https://nodejs.org — just run the installer.
+
+Build
+-----
+2. Unzip this folder somewhere, e.g. your Documents folder.
+3. Open the Terminal app, type   cd   followed by a space, drag this folder onto the
+   Terminal window, and press Return.
+4. Type this and press Return (it takes a few minutes the first time):
+
+     npm install && npm run dist:mac
+
+5. When it finishes, open the "release" folder. Double-click
+   "Breakwater Studio-1.0.0-arm64.dmg" and drag Breakwater Studio into Applications.
+
+First launch
+------------
+The app isn't signed with a paid Apple developer account, so the first time:
+right-click (or Ctrl-click) Breakwater Studio in Applications -> Open -> Open.
+After that it opens normally.
+
+The first time you record, macOS asks once whether Breakwater may use the microphone.
+Click Allow. (A rebuilt copy may ask once more.)

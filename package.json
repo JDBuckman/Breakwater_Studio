@@ -1,0 +1,112 @@
+{
+ "name": "breakwater-studio",
+ "productName": "Breakwater Studio",
+ "version": "1.0.0",
+ "description": "A free loop sequencer inspired by Making Waves. Dedicated to the memory of Stephen Steele.",
+ "author": "James Dolman",
+ "license": "MIT",
+ "main": "main.js",
+ "scripts": {
+  "start": "electron .",
+  "dist:mac": "electron-builder --mac",
+  "dist:win": "electron-builder --win",
+  "dist:linux": "electron-builder --linux"
+ },
+ "devDependencies": {
+  "electron": "45.3.0",
+  "electron-builder": "26.0.12"
+ },
+ "build": {
+  "appId": "studio.breakwater.app",
+  "productName": "Breakwater Studio",
+  "copyright": "Breakwater Studio \u2014 dedicated to the memory of Stephen Steele",
+  "files": [
+   "main.js",
+   "preload.js",
+   "app/**",
+   "build/icon.png"
+  ],
+  "directories": {
+   "output": "release",
+   "buildResources": "build"
+  },
+  "fileAssociations": [
+   {
+    "ext": "bwsong",
+    "name": "Breakwater Song",
+    "description": "Breakwater Studio song",
+    "role": "Editor",
+    "mimeType": "application/x-breakwater-song"
+   },
+   {
+    "ext": "trk",
+    "name": "Making Waves Song",
+    "description": "Making Waves song",
+    "role": "Viewer"
+   },
+   {
+    "ext": "mid",
+    "name": "MIDI File",
+    "role": "Viewer",
+    "rank": "Alternate"
+   },
+   {
+    "ext": "midi",
+    "name": "MIDI File",
+    "role": "Viewer",
+    "rank": "Alternate"
+   }
+  ],
+  "mac": {
+   "category": "public.app-category.music",
+   "target": [
+    "dmg"
+   ],
+   "icon": "build/icon.png",
+   "hardenedRuntime": true,
+   "extendInfo": {
+    "NSMicrophoneUsageDescription": "Breakwater Studio records from your microphone or audio interface.",
+    "NSAudioCaptureUsageDescription": "Breakwater Studio records from your audio interface."
+   },
+   "entitlements": "build/entitlements.mac.plist",
+   "entitlementsInherit": "build/entitlements.mac.plist",
+   "identity": "-"
+  },
+  "dmg": {
+   "title": "Breakwater Studio"
+  },
+  "win": {
+   "target": [
+    "nsis"
+   ],
+   "icon": "build/icon.png"
+  },
+  "nsis": {
+   "oneClick": false,
+   "allowToChangeInstallationDirectory": true,
+   "perMachine": false,
+   "shortcutName": "Breakwater Studio"
+  },
+  "linux": {
+   "target": [
+    "AppImage",
+    "deb"
+   ],
+   "category": "AudioVideo;Audio;Music",
+   "icon": "build/icon.png",
+   "synopsis": "Free loop sequencer inspired by Making Waves",
+   "maintainer": "James Dolman",
+   "executableName": "breakwater-studio"
+  },
+  "deb": {
+   "depends": [
+    "libasound2 | libasound2t64"
+   ]
+  }
+ },
+ "repository": {
+  "type": "git",
+  "url": "https://github.com/JDBuckman/Breakwater_Studio.git"
+ },
+ "homepage": "https://github.com/JDBuckman/Breakwater_Studio"
+}
